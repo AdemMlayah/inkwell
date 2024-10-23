@@ -27,17 +27,16 @@ function Navbar() {
       <div className="flex justify-end w-full items-center gap-8">
         <CiSearch
           size={30}
-          className="hover:text-dark-950 hover:cursor-pointer block sm:hi"
+          className="hover-darken block sm:hidden"
         />
 
         <IoCreateOutline
-          className="hover:text-dark-950 hover:cursor-pointer hidden sm:block"
+          className="hover-darken hidden sm:block"
           size={30}
         />
 
         <IoMdNotificationsOutline
-          className="hover:text-dark-950 hover:cursor-pointer"
-          size={30}
+className="hover-darken"           size={30}
         />
           <DropdownMenu>
       <DropdownMenuTrigger>

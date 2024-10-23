@@ -72,7 +72,7 @@ const config: Config = {
       
       fontSize: {
         'header-1': ['28px', { lineHeight: '1.2', fontWeight: '700', letterSpacing: '4.5px' }],
-        'header-2': ['24px', { lineHeight: '1.2', fontWeight: '700', letterSpacing: '4.5px' }],
+        'header-2': ['24px', { lineHeight: '1.4', fontWeight: '700', letterSpacing: '4.5px' }],
         'header-3': ['20px', { lineHeight: '1.2', fontWeight: '600', letterSpacing: '4.5px' }],
         'body-3': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
         'body-2': ['16px', { lineHeight: '1.6', fontWeight: '400' }],

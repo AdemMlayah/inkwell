@@ -63,6 +63,11 @@
     --chart-5: 340 75% 55%;
   }
 }
+@layer components {
+  .hover-darken {
+    @apply hover:text-dark-950 hover:cursor-pointer;
+  }
+}
 
 @layer base {
   * {
