@@ -86,3 +86,7 @@
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 }
+
+.transition-gap {
+  transition: gap 0.1s ease; /* Adjust the duration and easing as desired */
+}
