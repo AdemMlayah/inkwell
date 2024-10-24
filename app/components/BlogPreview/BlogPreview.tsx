@@ -7,7 +7,7 @@ import { PiDotsThreeCircle } from "react-icons/pi";
 
 function BlogPreview() {
   return (
-    <div className="max-w-xl w-full p-2 border-b flex flex-col gap-3 hover:cursor-pointer">
+    <div className="max-w-[820px]  p-4 border-b flex flex-col gap-3 hover:cursor-pointer">
       {/* Poster Avatar and name  */}
       <div className="flex flex-row gap-2">
         <div className="relative inline-block">

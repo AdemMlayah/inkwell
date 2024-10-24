@@ -86,7 +86,7 @@ function TopicCarousel() {
       {/* Carousel*/}
       <div
         ref={carouselRef}
-        className="flex no-scrollbar space-x-4 rounded-xl overflow-x-auto scroll-smooth scrollbar-hide w-[80%] mx-4"
+        className="flex no-scrollbar space-x-4 rounded-xl overflow-x-auto scroll-smooth scrollbar-hide w-[90%] mx-4"
       >
         {topics.map((topic, index) => (
           <div
