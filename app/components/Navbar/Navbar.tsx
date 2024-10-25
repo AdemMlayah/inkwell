@@ -12,7 +12,7 @@ import DropDown from "./DropDown";
   
 function Navbar() {
   return (
-    <div className="w-screen h-[60px] bg-dark-50 text-dark-600  flex items-center px-2 sm:px-10  drop-shadow-md gap-8	  ">
+    <div className="w-screen h-[60px] bg-dark-50 text-dark-600  flex items-center px-6  drop-shadow-md gap-8	  ">
       <span className="text-header-1 text-dark-950">Inkwell</span>
       <div className="relative flex-grow min-w-0 hidden sm:block">
         <input

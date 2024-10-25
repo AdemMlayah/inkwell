@@ -23,7 +23,7 @@ const ResponsiveCarousel = () => {
  
 
   return (
-    <Carousel className="w-[70%] m-auto">
+    <Carousel className="w-[80%] m-auto ">
       <CarouselContent className="">
         {topics.map((topic, index) => (
           <CarouselItem  className="basis-auto" key={index}>

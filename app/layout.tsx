@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body className="overflow-hidden" >
+      <body className="overflow-x-hidden" >
         <Navbar/>
     
         {children}
