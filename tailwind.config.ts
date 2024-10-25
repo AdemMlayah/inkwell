@@ -77,7 +77,7 @@ const config: Config = {
         'body-3': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
         'body-2': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
         'body-1': ['14px', { lineHeight: '1.6', fontWeight: '400' }],
-        caption: ['12px', { lineHeight: '1.4', fontWeight: '400' }],
+        caption: ['12px', { fontWeight: '400',letterSpacing:'1px' }],
         'blog-header': ['24px', { lineHeight: '1.2', fontWeight: '800', letterSpacing: '1.5px' }],
         'blog-body': ['16px', { lineHeight: '1.6', fontWeight: '500' }],
       },
