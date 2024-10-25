@@ -91,3 +91,6 @@
   transition: gap 0.1s ease; /* Adjust the duration and easing as desired */
 }
 
+html, body {
+  height: 100%;
+}
