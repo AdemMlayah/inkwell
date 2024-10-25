@@ -88,9 +88,18 @@
 }
 
 .transition-gap {
-  transition: gap 0.1s ease; /* Adjust the duration and easing as desired */
+  transition: gap 0.1s ease;
 }
 
-html, body {
-  height: 100%;
+
+
+body {
+  overflow-x: hidden; 
+}
+
+.navbar {
+  position: fixed;
+  top: 0; 
+  width: 100%; 
+  z-index: 1000; 
 }

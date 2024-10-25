@@ -5,14 +5,14 @@ import { IoCreateOutline } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import {
-    DropdownMenu,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
+  DropdownMenu,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import DropDown from "./DropDown";
-  
+
 function Navbar() {
   return (
-    <div className="w-screen h-[60px] bg-dark-50 text-dark-600  flex items-center px-6  drop-shadow-md gap-8	  ">
+    <div className="w-screen navbar h-[60px] bg-dark-50 text-dark-600  flex items-center px-2 sm:px-10  drop-shadow-md gap-8	  ">
       <span className="text-header-1 text-dark-950">Inkwell</span>
       <div className="relative flex-grow min-w-0 hidden sm:block">
         <input
@@ -25,33 +25,25 @@ function Navbar() {
         </div>
       </div>
       <div className="flex justify-end w-full items-center gap-8">
-        <CiSearch
-          size={30}
-          className="hover-darken block sm:hidden"
-        />
+        <CiSearch size={30} className="hover-darken block sm:hidden" />
 
-        <IoCreateOutline
-          className="hover-darken hidden sm:block"
-          size={30}
-        />
+        <IoCreateOutline className="hover-darken hidden sm:block" size={30} />
 
-        <IoMdNotificationsOutline
-className="hover-darken"           size={30}
-        />
-          <DropdownMenu>
-      <DropdownMenuTrigger>
-        <div className="relative inline-block">
-          <Avatar>
-            <AvatarImage
-              className="hover:cursor-pointer"
-              src="https://github.com/shadcn.png"
-            />
-          </Avatar>
-          <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 rounded-3xl hover:opacity-40 hover:cursor-pointer" />
-        </div>
-      </DropdownMenuTrigger>
-      <DropDown/>
-    </DropdownMenu>
+        <IoMdNotificationsOutline className="hover-darken" size={30} />
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <div className="relative inline-block">
+              <Avatar>
+                <AvatarImage
+                  className="hover:cursor-pointer"
+                  src="https://github.com/shadcn.png"
+                />
+              </Avatar>
+              <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 rounded-3xl hover:opacity-40 hover:cursor-pointer" />
+            </div>
+          </DropdownMenuTrigger>
+          <DropDown />
+        </DropdownMenu>
       </div>
     </div>
   );
