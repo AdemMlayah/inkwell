@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
-import { GeistSans } from 'geist/font/sans'
 
 
 export const metadata: Metadata = {
@@ -15,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en">
       <body className="" >
         <Navbar/>
     

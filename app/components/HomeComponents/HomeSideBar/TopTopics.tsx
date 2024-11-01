@@ -16,11 +16,11 @@ function TopTopics() {
   return (
     <div className='flex flex-col gap-4'>
     
-          <span className='text-header-3 text-dark-500 '> Top Topics</span>
+          <span className='text-header-3 text-dark-700 '> Top Topics</span>
            <div className='w-[250px] flex flex-wrap gap-2'>
             {topics.map((Topic,Index)=>(
 
-            <Badge key={Index} className='bg-dark-50 h-8 text-dark-500 hover:cursor-pointer'>{Topic}</Badge>
+            <Badge key={Index} className='bg-dark-50 h-8 text-dark-900 hover:cursor-pointer'>{Topic}</Badge>
             ))}
            </div>
     </div>

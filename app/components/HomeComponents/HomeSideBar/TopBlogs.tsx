@@ -10,7 +10,7 @@ import {
 function TopBlogs() {
   return (
     <div className='flex flex-col gap-4'>
-      <span className='text-header-3 text-dark-500'>Top Blogs</span>
+      <span className='text-header-3 text-dark-700'>Top Blogs</span>
       <div className='flex flex-col gap-4'>
         {Array.from({ length: 3 }).map((_, index) => (
           <div key={index} className='flex flex-col gap-1 w-[90%]'>
@@ -23,7 +23,7 @@ function TopBlogs() {
                 </Avatar>
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 rounded-3xl hover:opacity-40 hover:cursor-pointer" />
               </div>
-              <span className="text-dark-700 text-body-1 hover:text-dark-950 hover:cursor-pointer">
+              <span className="text-dark-800 text-body-1 hover:text-dark-950 hover:cursor-pointer">
                 Adem Mlayah
               </span>
 
