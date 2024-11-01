@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 function TopWriters() {
   return (
     <div className='flex flex-col gap-4'>
-      <span className='text-header-3 text-dark-500'>Top Writers</span>
+      <span className='text-header-3 text-dark-700'>Top Writers</span>
       {/* Repeat writer section */}
       {Array.from({ length: 3 }).map((_, index) => (
         <div key={index} className='flex flex-row items-start gap-4'>
@@ -20,7 +20,7 @@ function TopWriters() {
                 </Avatar>
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 rounded-3xl hover:opacity-40 hover:cursor-pointer" />
               </div>
-              <span className="text-dark-700 hover:text-dark-950 hover:cursor-pointer hover:underline">
+              <span className="text-dark-800 hover:text-dark-950 hover:cursor-pointer hover:underline">
                 Adem Mlayah
               </span>
             </div>
