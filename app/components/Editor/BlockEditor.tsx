@@ -1,5 +1,3 @@
-// Editor.tsx
-import { useEffect, useState } from "react";
 import {
   useEditor,
   ReactNodeViewRenderer,
@@ -7,12 +5,7 @@ import {
   Editor as TipTapEditor,
 } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import Blockquote from "@tiptap/extension-blockquote";
-import Link from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
-import ListItem from "@tiptap/extension-list-item";
-import BulletList from "@tiptap/extension-bullet-list";
-import Document from "@tiptap/extension-document";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
 import { TrailingNode } from "./Extensions/trailing-node";
 
@@ -27,10 +20,6 @@ type TextEditorProps = {
   initialContent?: string;
 };
 
-const CustomDocument = Document.extend({
-  content: "heading block*",
-});
-
 function BlockEditor({ onChange, initialContent = "" }: TextEditorProps) {
   const editor = useEditor({
     immediatelyRender: false,
@@ -41,21 +30,19 @@ function BlockEditor({ onChange, initialContent = "" }: TextEditorProps) {
         },
       }).configure({ lowlight }),
 
-      CustomDocument,
       StarterKit.configure({
         heading: {
           levels: [1, 2, 3],
         },
+        codeBlock: false,
       }),
       Placeholder.configure({
         placeholder: ({ node }) =>
-          node.type.name === "heading"
-            ? "What’s the title?"
-            : "Start typing...",
+          node.type.name === "heading" ? "What’s the title?" : "",
       }),
       TrailingNode,
     ],
-    content: initialContent || "<h1></h1>", 
+    content: initialContent || "<h1></h1>",
     onUpdate: ({ editor }) => {
       // onChange(editor.getHTML());
     },
@@ -68,10 +55,10 @@ function BlockEditor({ onChange, initialContent = "" }: TextEditorProps) {
 
   return (
     <div spellCheck="false" className="flex w-screen justify-center">
-    <ContentBubbleMenu editor={editor} />
-    <EditorContent editor={editor} className="lg:w-4/6 w-full" />
+      <ContentBubbleMenu editor={editor} />
+      <EditorContent editor={editor} className="lg:w-4/6 w-full" />
       <ContentItemMenu editor={editor} />
-  </div>
+    </div>
   );
 }
 

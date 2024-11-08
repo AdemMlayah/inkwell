@@ -1,11 +1,9 @@
 "use client";
-import { useState } from "react";
-import BlockEditor from "./BlockEditor";
-import "./editor.css";
+import BlockEditor from "../components/Editor/BlockEditor";
 export default function AddText() {
   return (
-    <div className="flex justify-center mt-20">
-      <BlockEditor />
+    <div className="flex justify-center ">
+      <BlockEditor  />
     </div>
   );
 }

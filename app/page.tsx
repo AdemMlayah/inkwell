@@ -5,7 +5,7 @@ import TopicCarousel from "./components/HomeComponents/TopicCarousel/TopicCarous
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen mt-20">
+    <div className="w-screen h-screen ">
 
     <div className=" grid grid-flow-col max-w-[1350px] mx-auto transition-gap gap-0 md:gap-2 lg:gap-10 xl:gap-20 justify-center">
       <div className="max-w-[800px] flex flex-col overflow-auto">
@@ -30,7 +30,7 @@ export default function Home() {
       </div>
       <div 
 
-      className=" hidden md:block max-w-[350px] h-screen shrink-1   sticky top-24 border-l ">
+      className=" hidden md:block max-w-[350px] h-screen shrink-1 mt-5   sticky border-l ">
 <HomeSideBar/>
         
       </div>
