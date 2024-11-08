@@ -12,6 +12,19 @@ const config: Config = {
   		colors: {
         
         lightGrey: "#d9d9d9",
+		primaryColor: {
+			50: "#FFF4ED",
+			100: "#FFE6D4",
+			200: "#FFC9A9",
+			300: "#FF9F6B",
+			400: "#FE7339",
+			500: "#FC4D13",
+			600: "#ED3309",
+			700: "#C52209",
+			800: "#9C1D10",
+			900: "#7E1A10",
+			950: "#440A06",
+		  },
         dark: {
           50: "#fafafa",
           100: "#e7e7e7",
