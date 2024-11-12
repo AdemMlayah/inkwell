@@ -1,0 +1,115 @@
+datasource db {
+  provider = "postgresql"  // or "mysql", "sqlite", etc., depending on your database
+  url      = env("DATABASE_URL")  // The URL to your database, typically stored in .env file
+}
+
+generator client {
+  provider = "prisma-client-js"  // This generates Prisma Client for interacting with the database
+}
+
+model User {
+  id                     String         @id @default(uuid())
+  userName               String
+  password               String?
+  bio                    String?
+  Blog                   Blog[]
+  Comments               Comments[]
+  Notifications          Notification[] @relation("UserNotifications")
+  TriggeredNotifications Notification[] @relation("TriggeredBy")
+
+  Followers     Flower[]
+  Following     Following[]
+  LikedBlog     LikedBlog[]
+  LikedComments LikedComments[]
+}
+
+model Notification {
+  id            String           @id @default(uuid())
+  type          NotificationType
+  createdAt     DateTime         @default(now())
+  read          Boolean          @default(false)
+  userId        String
+  triggeredById String?
+  blogId        String?
+  commentId     String?
+
+  User        User      @relation("UserNotifications", fields: [userId], references: [id])
+  TriggeredBy User?     @relation("TriggeredBy", fields: [triggeredById], references: [id])
+  Blog        Blog?     @relation(fields: [blogId], references: [id])
+  Comment     Comments? @relation(fields: [commentId], references: [id])
+}
+
+model Blog {
+  id         String   @id @default(uuid())
+  content    String
+  Created_At DateTime @default(now())
+  Updated_At DateTime @updatedAt
+  userId     String
+
+  User         User           @relation(fields: [userId], references: [id])
+  Comments     Comments[]
+  Notification Notification[]
+  LikedBlog    LikedBlog[]
+}
+
+model Comments {
+  id        String   @id @default(uuid())
+  content   String
+  createdAt DateTime @default(now())
+  userId    String
+  blogId    String
+  parentId  String?
+
+  User          User            @relation(fields: [userId], references: [id])
+  Blog          Blog            @relation(fields: [blogId], references: [id])
+  Parent        Comments?       @relation("CommentReplies", fields: [parentId], references: [id])
+  Replies       Comments[]      @relation("CommentReplies")
+  Notifications Notification[]
+  LikedComments LikedComments[]
+}
+
+enum NotificationType {
+  LIKE
+  COMMENT
+  REPLY
+}
+
+model Flower {
+  id         String @id @default(uuid())
+  followerId String
+  userId     String
+  User       User   @relation(fields: [userId], references: [id])
+
+  @@unique([followerId, userId])
+}
+
+model Following {
+  id          String @id @default(uuid())
+  followingId String
+  userId      String
+  User        User   @relation(fields: [userId], references: [id])
+
+  @@unique([userId, followingId])
+}
+
+model LikedBlog {
+  id     String @id @default(uuid())
+  userId String
+  blogId String
+
+  user User @relation(fields: [userId], references: [id])
+  blog Blog @relation(fields: [blogId], references: [id])
+
+  @@unique([userId, blogId])
+}
+
+model LikedComments {
+  id        String @id @default(uuid())
+  userId    String
+  commentId String
+
+  User    User     @relation(fields: [userId], references: [id])
+  Comment Comments @relation(fields: [commentId], references: [id])
+
+  @@unique([userId, commentId])
+}

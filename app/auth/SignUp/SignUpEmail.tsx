@@ -25,17 +25,16 @@ function SignUpEmail({ setPageView }: any) {
     },
   })
 
-  // Function to handle form submission
   const onSubmit = (data: any) => {
-    console.log(data) // Handle your form data here, e.g., send to an API
+    console.log(data)
   }
 
   return (
     <div className='flex items-center flex-col w-full gap-20 '>
-      <span className='text-header-1 '>Sign up with Email</span>
+      <span className='text-header-1 text-center'>Sign up with Email</span>
       
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[70%]">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full md:w-[70%]">
           <FormField
             control={form.control}
             name="username"
@@ -78,6 +77,7 @@ function SignUpEmail({ setPageView }: any) {
           <Button className='w-full bg-primaryColor-400 hover:bg-primaryColor-500' type="submit">Submit</Button>
         </form>
       </Form>
+
       <div
         onClick={() => setPageView('SignUp')}
         className='flex items-center gap-3 hover:cursor-pointer'>
