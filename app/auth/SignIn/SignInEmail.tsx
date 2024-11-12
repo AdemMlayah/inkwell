@@ -24,17 +24,16 @@ function SignInEmail({ setPageView }: any) {
     },
   })
 
-  // Function to handle form submission
   const onSubmit = (data: any) => {
-    console.log(data) // Handle your form data here, e.g., send to an API
+    console.log(data) 
   }
 
   return (
     <div className='flex items-center flex-col w-full gap-20 '>
-      <span className='text-header-1 '>Sign in with Email</span>
+      <span className='text-header-1 text-'>Sign in with Email</span>
       
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[70%]">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8  w-[100%] md:w-[70%]">
           <FormField
             control={form.control}
             name="Email"
